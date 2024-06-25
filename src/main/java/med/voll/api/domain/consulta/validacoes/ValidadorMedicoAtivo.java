@@ -7,7 +7,7 @@ import med.voll.api.domain.medico.MedicoRepository;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-public class ValidadorMedicoAtivo {
+public class ValidadorMedicoAtivo implements ValidadorAgendamentoDeConsulta {
 
     private MedicoRepository repository;
 
