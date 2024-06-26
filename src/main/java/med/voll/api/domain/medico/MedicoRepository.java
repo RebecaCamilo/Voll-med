@@ -28,7 +28,7 @@ public interface MedicoRepository extends JpaRepository<Medico, Long> {
     Medico escolherMedicoAleatorioLivreNaData(Especialidade especialidade, LocalDateTime data);
 
     @Query("""
-            select m.ativo
+            select case when m.ativo = 1 then true else false end
             from Medico m
             where
             m.id = :id

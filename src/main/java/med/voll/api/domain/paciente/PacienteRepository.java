@@ -12,7 +12,7 @@ public interface PacienteRepository extends JpaRepository<Paciente, Long> {
     Page<Paciente> findAllByAtivo(short ativo, Pageable pageable);
 
     @Query("""
-            select p.ativo
+            select case when p.ativo = 1 then true else false end
             from Paciente p
             where
             p.id = :id
